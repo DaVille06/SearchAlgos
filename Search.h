@@ -6,7 +6,7 @@
 class Search {
 public:
 	static int simple_search(std::vector<int> arr, int numToSearchFor);
-	static void binary_search(int arr[], int numToSearchFor);
+	static int binary_search(std::vector<int> arr, int numToSearchFor);
 };
 
 #endif // !SEARCH_H

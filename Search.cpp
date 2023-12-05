@@ -6,8 +6,6 @@
 // Returns the position of the item if it is found
 // Returns -1 if it was not found
 int Search::simple_search(std::vector<int> arr, int numToSearchFor) {
-	//unsigned int arrSize = sizeof(arr) / sizeof(arr[0]);
-
 	for (int i = 0; i < arr.size(); i++) {
 		if (arr[i] == numToSearchFor) {
 			return i;
@@ -22,6 +20,23 @@ int Search::simple_search(std::vector<int> arr, int numToSearchFor) {
 // (only works on a sorted array)
 // Returns the position of the item if it is found
 // Returns -1 if it was not found
-void Search::binary_search(int arr[], int numToSearchFor) {
-	
+int Search::binary_search(std::vector<int> arr, int numToSearchFor) {
+	unsigned low = 0;
+	unsigned high = arr.size();
+	unsigned mid;
+
+	while (low < high) {
+		mid = (high + low) / 2;
+		if (arr[mid] == numToSearchFor) {
+			return mid;
+		}
+		else if (numToSearchFor > arr[mid]) {
+			low = mid + 1;
+		}
+		else {
+			high = mid - 1;
+		}
+	}
+
+	return -1;
 }

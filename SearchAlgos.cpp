@@ -9,6 +9,11 @@ int main()
 
     auto simpResultFound = Search::simple_search(arr, 15);
     auto simpResultNotFound = Search::simple_search(arr, 100);
-    std::cout << "15 was found at position: " << simpResultFound << std::endl;
-    std::cout << "100 was not found: " << simpResultNotFound << std::endl;
+    std::cout << "Simple - 15 was found at position: " << simpResultFound << std::endl;
+    std::cout << "Simple - 100 was not found: " << simpResultNotFound << std::endl;
+
+    auto binResultFound = Search::binary_search(arr, 15);
+    auto binResultNotFound = Search::binary_search(arr, 100);
+    std::cout << "Binary - 15 was found at position: " << binResultFound << std::endl;
+    std::cout << "Binary - 100 was not found: " << binResultNotFound << std::endl;
 }
