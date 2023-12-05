@@ -5,8 +5,16 @@
 // (works on sorted and non-sorted)
 // Returns the position of the item if it is found
 // Returns -1 if it was not found
-void Search::simple_search(int arr[], int numToSearchFor) {
-	
+int Search::simple_search(std::vector<int> arr, int numToSearchFor) {
+	//unsigned int arrSize = sizeof(arr) / sizeof(arr[0]);
+
+	for (int i = 0; i < arr.size(); i++) {
+		if (arr[i] == numToSearchFor) {
+			return i;
+		}
+	}
+
+	return -1;
 }
 
 // Runs in O(log n)
