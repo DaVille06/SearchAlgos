@@ -22,7 +22,7 @@ int Search::simple_search(std::vector<int> arr, int numToSearchFor) {
 // Returns -1 if it was not found
 int Search::binary_search(std::vector<int> arr, int numToSearchFor) {
 	unsigned low = 0;
-	unsigned high = arr.size();
+	unsigned high = arr.size() - 1;
 	unsigned mid;
 
 	while (low < high) {
@@ -39,4 +39,21 @@ int Search::binary_search(std::vector<int> arr, int numToSearchFor) {
 	}
 
 	return -1;
+}
+
+int Search::binary_search_recursive(std::vector<int> arr, int numToSearchFor, unsigned low, unsigned high) {
+	if (low > high) {
+		return -1;
+	}
+
+	unsigned mid = (high + low) / 2;
+	if (arr[mid] == numToSearchFor) {
+		return mid;
+	}
+	else if (numToSearchFor > arr[mid]) {
+		return Search::binary_search_recursive(arr, numToSearchFor, mid + 1, high);
+	}
+	else {
+		return Search::binary_search_recursive(arr, numToSearchFor, low, mid - 1);
+	}
 }
