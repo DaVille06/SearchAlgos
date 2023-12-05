@@ -41,6 +41,11 @@ int Search::binary_search(std::vector<int> arr, int numToSearchFor) {
 	return -1;
 }
 
+// Runs in O(log n)
+// Divides the array in half looking for the numbers to search for
+// (only works on a sorted array)
+// Returns the position of the item if it is found
+// Returns -1 if it was not found
 int Search::binary_search_recursive(std::vector<int> arr, int numToSearchFor, unsigned low, unsigned high) {
 	if (low > high) {
 		return -1;
